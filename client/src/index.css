@@ -1,0 +1,126 @@
+/* body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+} */
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400&display=swap");
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  min-height: 100vh;
+  /* background-color: #94e7ff; */
+  background-color: #bee3f8;
+}
+
+#root {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+table {
+  padding: 20px;
+  background-color: white;
+  border-radius: 0.3em;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.task {
+  padding-right: 30px;
+  font-weight: bold;
+  text-align: right;
+}
+
+tbody td {
+  padding-top: 20px;
+}
+
+td input {
+  padding: 5px 10px;
+  width: 50px;
+  background-color: rgba(229, 231, 235);
+  border: 1px solid rgba(209, 213, 219);
+  border-radius: 0.2rem;
+  text-align: center;
+  outline: none;
+}
+
+td input:focus {
+  border: 1px solid rgba(147, 197, 253);
+}
+
+.table-header {
+  width: 150px;
+  /* border-bottom: 1px solid black; */
+}
+
+.table-header span {
+  border-bottom: 1px solid black;
+  padding: 0 15px;
+}
+
+.tdInput {
+  text-align: center;
+}
+
+.header {
+  display: flex;
+  padding: 10px 20px;
+  /* justify-content: space-between; */
+  width: 40%;
+}
+
+.header input {
+  margin-right: 10px;
+  /* background-color: rgba(229, 231, 235); */
+  border: 1px solid rgba(156, 163, 175);
+  padding: 5px 10px;
+  outline: none;
+  border-radius: 0.2rem;
+  width: 12rem;
+  height: 1.7rem;
+}
+
+.header input:focus {
+  border: 1px solid rgba(59, 130, 246);
+}
+
+.header span {
+  font-weight: bold;
+}
+
+.header div {
+  padding: 0 40px;
+}
+
+.btn {
+  color: white;
+  /* background-color: #34d399; */
+  background-color: #34d399;
+  padding: 5px 10px;
+  font-weight: bold;
+  border-radius: 0.2rem;
+  border: none;
+  outline: none;
+  min-height: 1.7rem;
+}
+.btn:hover {
+  cursor: pointer;
+  /* background-color: #10b981; */
+  background-color: #10b981;
+}
