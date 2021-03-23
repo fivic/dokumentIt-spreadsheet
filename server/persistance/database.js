@@ -4,18 +4,12 @@ const mysql = require('mysql')
 let con;
 
 async function init() {
-    // const host = HOST_FILE ? fs.readFileSync(HOST_FILE) : HOST;
-    // const user = USER_FILE ? fs.readFileSync(USER_FILE) : USER;
-    // const password = PASSWORD_FILE ? fs.readFileSync(PASSWORD_FILE) : PASSWORD;
-    // const database = DB_FILE ? fs.readFileSync(DB_FILE) : DB;
-
-    // await waitPort({ host, port : 3306});
 
     con = mysql.createConnection({
         host: '127.0.0.1',
-        port: '3307',
+        port: '3306',
         user: 'root',
-        password: 'password123',
+        password: 'root',
         database: 'dokument_react'
       })
       con.connect((err) => {
@@ -23,14 +17,6 @@ async function init() {
           throw err;
         console.log('MySql connected')
       })
-    // pool = mysql.createPool({
-    //     connectionLimit: 5,
-    //     host: '127.0.0.1',
-    //     port: '3307',
-    //     user: 'root',
-    //     password: 'password123',
-    //     database: 'dokument_react'
-    // });
 
     return new Promise((acc, rej) => {
         con.query(

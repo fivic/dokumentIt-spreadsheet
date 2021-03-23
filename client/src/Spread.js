@@ -1,12 +1,14 @@
 import { useState, useEffect } from 'react'
 import axios from 'axios';
-import Header from './components/Header.js'
+import Header from './components/Header'
+import Loader from './components/Loader'
 
 
 const Spread = () => {
     const [dates, setDates] = useState([])
     const [data, setData] = useState([])
     const [tasks, setTasks] = useState([])
+    const [loading, setLoading] = useState([true])
 
     // onComponentMount
     useEffect(async () => {
@@ -22,6 +24,7 @@ const Spread = () => {
 
         await getData()
         await getTasks()
+        setLoading(false)
         // getUniqueDates()
     }, [])
 
@@ -101,18 +104,25 @@ const Spread = () => {
 
     return (
         <div style={{padding: '20px 0'}}>
-            <Header onAdd={handleAddTask}></Header>
-            <table className="container">
-                <thead>
-                    <tr>
-                        <th></th>
-                        { dates.map((el) => <th key={el} className="table-header"><span>{ el }</span></th>)}
-                    </tr>
-                </thead>
-                <tbody>
-                    {dates && row}
-                </tbody>
-            </table>
+            {
+                loading 
+                ? <Loader></Loader> 
+                :
+                <div>
+                    <Header onAdd={handleAddTask}></Header>
+                    <table className="container">
+                        <thead>
+                            <tr>
+                                <th></th>
+                                { dates.map((el) => <th key={el} className="table-header"><span>{ el }</span></th>) }
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {dates && row}
+                        </tbody>
+                    </table>
+                </div>
+            }
         </div>
     )
 }

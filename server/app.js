@@ -4,17 +4,12 @@ var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 var cors = require('cors')
-// const mysql = require('mysql')
 const db = require('./persistance/database');
 
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 
 var app = express();
-
-// view engine setup
-// app.set('views', path.join(__dirname, 'views'));
-// app.set('view engine', 'jade');
 
 // Cors
 var corsOptions = {
@@ -24,20 +19,6 @@ var corsOptions = {
 app.use(cors(corsOptions))
 
 db.init()
-// Create DB connection
-// var connection = mysql.createConnection({
-//   host: '127.0.0.1',
-//   port: '3307',
-//   user: 'root',
-//   password: 'password123',
-//   database: 'dokument_react'
-// })
-// connection.connect((err) => {
-//   if(err)
-//     throw err;
-//   console.log('MySql connected')
-// })
-
 
 app.use(logger('dev'));
 app.use(express.json());

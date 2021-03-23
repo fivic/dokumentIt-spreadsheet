@@ -68,19 +68,15 @@ const tasks = [{
 /* GET data. */
 router.get('/data', async (req, res) => {
   const timesheetData = await db.getTimesheetData()
-  console.log("timesheetData", timesheetData)
+
   res.send(timesheetData);
 });
 
 router.get('/tasks', async (req, res) => {
   const tasks = await db.getTasks()
+  
   res.send(tasks)
 })
-
-// router.get('/test', async (req, res) => {
-//   const items = await db.getTasks()
-//   res.send(items)
-// })
 
 router.post('/task/:taskName', async (req, res) => {
   const insertId = await db.storeTask(req.params.taskName)
@@ -96,20 +92,6 @@ router.post('/data/:taskId/:date/:hours', async (req, res, next) => {
   }
   
   const dbResp = await db.updateTimesheetData(data)
-  // const index = data.findIndex((el)=> el.taskId == req.params.taskId && el.date == req.params.date)
-
-  // if(index !== -1){
-  //   data[index].hours = Number(req.params.hours)
-  // }
-  // else
-  //     {
-  //       const obj = {
-  //         date: req.params.date,
-  //         taskId: Number(req.params.taskId),
-  //         hours: Number(req.params.hours)
-  //       };
-  //       data.push(obj)
-  // }
   
   res.sendStatus(200);
 })
