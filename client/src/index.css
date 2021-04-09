@@ -1,16 +1,21 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400&display=swap");
 
-* {
+/* * {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-}
+} */
 
-body {
+/* body {
   font-family: "Poppins", sans-serif;
   min-height: 100vh;
-  /* background-color: #94e7ff; */
   background-color: #bee3f8;
+} */
+
+body {
+  background-color: #2c2c2c;
+  font-family: Lato, Helvetica, Arial, sans-serif;
+  color: #fff;
 }
 
 #root {
@@ -20,20 +25,20 @@ body {
   align-items: center;
 }
 
-table {
+/* table {
   padding: 20px;
   background-color: white;
   border-radius: 0.3em;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-}
+} */
 
-.task {
+/* .task {
   padding-right: 30px;
   font-weight: bold;
   text-align: right;
-}
+} */
 
-tbody td {
+/* tbody td {
   padding-top: 20px;
 }
 
@@ -45,9 +50,9 @@ td input {
   border-radius: 0.2rem;
   text-align: center;
   outline: none;
-}
+} */
 
-td input:focus {
+/* td input:focus {
   border: 1px solid rgba(147, 197, 253);
 }
 
@@ -62,9 +67,9 @@ td input:focus {
 
 .tdInput {
   text-align: center;
-}
+} */
 
-.header {
+/* .header {
   display: flex;
   padding: 10px 20px;
   width: 40%;
@@ -105,4 +110,4 @@ td input:focus {
 .btn:hover {
   cursor: pointer;
   background-color: #10b981;
-}
+} */

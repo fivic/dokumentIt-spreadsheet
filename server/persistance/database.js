@@ -7,9 +7,9 @@ async function init() {
 
     con = mysql.createConnection({
         host: '127.0.0.1',
-        port: '3306',
+        port: '3307',//3306
         user: 'root',
-        password: 'root',
+        password: 'password123',//root
         database: 'dokument_react'
       })
       con.connect((err) => {
@@ -60,11 +60,22 @@ async function getTimesheetData() {
         con.query('SELECT * FROM timesheet', (err, rows) => {
             if (err) return rej(err);
             
+            console.log("rows", rows)
             acc(
                 rows.map(item => item),
             );
         });
     });
+}
+
+async function getSpreadsheetColumns() {
+    return new Promise((acc, rej) => {
+        con.query('SELECT * FROM spreadsheet_header', (err, rows) => {
+            if(err) return rej(err);
+            console.log(rows)
+            acc(rows.map(item => item));
+        })
+    })
 }
 
 async function updateTimesheetData(item) {
@@ -91,5 +102,6 @@ module.exports = {
     getTasks,
     storeTask,
     getTimesheetData,
-    updateTimesheetData
+    updateTimesheetData,
+    getSpreadsheetColumns
 }

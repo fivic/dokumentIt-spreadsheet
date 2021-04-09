@@ -78,6 +78,12 @@ router.get('/tasks', async (req, res) => {
   res.send(tasks)
 })
 
+router.get('/columns', async (req, res) => {
+  const tasks = await db.getSpreadsheetColumns()
+  
+  res.send(tasks)
+})
+
 router.post('/task/:taskName', async (req, res) => {
   const insertId = await db.storeTask(req.params.taskName)
 

@@ -1,4 +1,5 @@
-import Spread from './Spread.js'
+// import Spread from './Spread.js'
+import Spread from './SpreadComp.js'
 
 function App() {
   return (
